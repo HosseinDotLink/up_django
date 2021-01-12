@@ -1,0 +1,30 @@
+{% extends "panel/master.html" %}
+{% load staticfiles %}
+{% load plusplustag %}
+{% load return_item %}
+
+{% block title %}پنل کاربری - گروه کامپیوتر دانشگاه تربت حیدریه{% endblock %}
+{% block content %}
+
+<div class="container page" role="main" dir="rtl">
+
+        <div class="row">
+            <center>
+            <a id="maincontent"></a>
+              <p style="margin-top: 25px; margin-bottom: 25px">{{ user.0.first_name }} {{ user.0.last_name }}، خوش آمدید.</p>
+
+        </center>
+            <br>
+            <br><p>با توجه به تدابیر اندیشیده شده در حال حاضر توانایی ارتباط بین اساتید و دانشجویان و همچنین انتخاب و تعریف پروژه موجود می باشد.</p>
+            <br><p>اساتید گرامی در قسمت پروژه می توانند اقدام به تعریف پروژه های خود نموده و پس از انتخاب شدن موضوعات توسط دانشجویان یک درخواست برای رد و یا تایید به استاد مربوطه ارسال می گردد.</p>
+            <br><p>در بخش ارتباط با اساتید نیز با کلیک بر روی دکمه مربوطه در کنار نام فرد مورد نظر میتوانید به گفت و گو بپردازید.</p>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+
+<div class="push"><!--//--></div>
+{% endblock %}

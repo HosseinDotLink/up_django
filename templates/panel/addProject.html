@@ -1,0 +1,194 @@
+{% extends "panel/master.html" %}
+{% load staticfiles %}
+
+{% block title %}افزودن پروژه - گروه کامپیوتر دانشگاه تربت حیدریه{% endblock %}
+
+{% block style %}
+
+section {
+  width: 100%;
+  margin: 60px auto;
+  padding: 10px 15px 20px 15px;
+}
+
+.chat ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.chat ul li {
+  margin: 45px 0 0 0;
+  font-weight: 300;
+}
+.chat ul li a.user {
+  margin: -30px 0 0 0;
+  display: block;
+  color: #333;
+}
+.chat ul li a.user img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.chat ul li .date {
+  font-size: 14px;
+  color: #a6a6a6;
+}
+.chat ul li .message {
+  display: block;
+  padding: 10px;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  background-color: #96269e;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.chat ul li .message:before {
+  content: '';
+  position: absolute;
+  border-top: 16px solid rgba(0, 0, 0, 0.15);
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+}
+.chat ul li .message:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-top: 17px solid #96269e;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+}
+.chat ul li .message p {
+  margin: 0;
+  padding: 0;
+  transition: all 0.1s;
+}
+.chat ul li .message .hider {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: -10px;
+  text-align: center;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.1s;
+}
+.chat ul li .message .hider span {
+  display: block;
+  position: relative;
+  top: 50%;
+  font-size: 16px;
+  transform: translateY(-50%);
+}
+.chat ul li.other a.user {
+  float: right;
+}
+.chat ul li.other .date {
+  float: right;
+  margin: -20px 10px 0 0;
+}
+.chat ul li.other .message {
+  margin: 0 90px 0 0;
+  background-color: #ff8205;
+
+}
+.chat ul li.other .message:before {
+  margin: -9px -16px 0 0;
+  right: 0;
+}
+.chat ul li.other .message:after {
+  content: '';
+  right: 0;
+  margin: 0 -15px 0 0;
+  border-top: 17px solid #ff8205;
+
+}
+.chat ul li.you a.user {
+  float: left;
+}
+.chat ul li.you .date {
+  float: left;
+  margin: -20px 0 0 10px;
+}
+.chat ul li.you .message {
+  margin: 0 0 0 90px;
+}
+.chat ul li.you .message:before {
+  margin: -9px 0 0 -16px;
+  left: 0;
+}
+.chat ul li.you .message:after {
+  content: '';
+  left: 0;
+  margin: 0 0 0 -15px;
+}
+.su {
+  background-color: #fff;
+  border: solid;
+  border-color: #ce31e0;
+  color: #ce31e0;
+  padding: 8px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+}
+
+.su:hover {
+  background-color: #ce31e0;
+  color: white;
+}
+
+
+{% endblock %}
+
+{% block script %}
+
+function auto_grow(element) {
+    element.style.height = "50px";
+    element.style.height = (element.scrollHeight)+"px";
+}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container page" role="main" dir="rtl">
+
+        <div class="row">
+            <center>
+            <a id="maincontent"></a>
+
+<section>
+  <div class="chat">
+    <ul>
+        <li><h1 style="text-align: center">افزودن پروژه</h1></li>
+        <li class="send">
+            <center>
+                <form style="margin-left: 78px; margin-right: 78px" method="post">
+                  {% csrf_token %}
+                <div class="row">
+                    <textarea name="prj_title" placeholder="خلاصه توضیحات پروژه را وارد کنید..." style="width: 99%; resize: none; font-size: 16px" onkeyup="auto_grow(this)"></textarea>
+                <input class="su" type="submit" style="float: left; margin-left: 1%; margin-top: 10px" value="افزودن">
+                </div>
+            </form>
+
+            </center>
+        </li>
+
+    </ul>
+  </div>
+</section>
+
+
+
+        </center>
+        </div>
+    </div>
+    <div class="push"><!--//--></div>
+</div>
+
+{% endblock %}

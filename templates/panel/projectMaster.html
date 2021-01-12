@@ -1,0 +1,164 @@
+{% extends "panel/master.html" %}
+{% load staticfiles %}
+{% load plusplustag %}
+{% load return_item %}
+
+{% block title %}پنل کاربری - گروه کامپیوتر دانشگاه تربت حیدریه{% endblock %}
+
+{% block style %}
+
+.clickEdit {
+  width: 70px;
+  background-color: #fff;
+  border: solid;
+  border-color: #ce31e0;
+  color: #ce31e0;
+  padding: 2px;
+  text-decoration: none;
+  float:left;
+  font-size: 14px;
+  text-align: center;
+  margin-left : 5px;
+
+}
+.clickEdit:hover {
+  background-color: #ce31e0;
+  text-decoration: none;
+  color: white;
+}
+
+.clickRem {
+  width: 60px;
+  background-color: #fff;
+  border: solid;
+  border-color: #f7941d;
+  color: #f7941d;
+  padding: 2px;
+
+  text-decoration: none;
+  float:left;
+  font-size: 14px;
+  text-align: center;
+
+}
+.clickRem:hover {
+  background-color: #f7941d;
+  text-decoration: none;
+  color: white;
+}
+
+
+.clickadd {
+  width: 100px;
+  background-color: #fff;
+  border: solid;
+  border-color: #f7941d;
+  color: #f7941d;
+  padding: 2px;
+  text-decoration: none;
+  float:left;
+  font-size: 16px;
+  text-align: center;
+
+}
+.clickadd:hover {
+  background-color: #f7941d;
+  text-decoration: none;
+  color: white;
+}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container page" role="main" dir="rtl">
+
+        <div class="row">
+            <center>
+            <a id="maincontent"></a>
+
+            <br>
+            <a href="add/" class="clickadd">افزودن</a>
+            <br>
+
+                <br><p>پروژه های انتخاب شده توسط دانشجویان</p>
+            <br>
+            <table class="table table-striped" style="border: none">
+                {% if requested %}
+                {%  with i=0 %}
+              {% for req in requested %}
+                <tr>
+                <td>{{ req.prj_title }}</td>
+                <td style="font-size: 14px; text-align: center;">{{ std|return_user_data:i }}</td>
+
+                <td style="width: 155px">
+                    <a href="decline/{{ req.id }}" class="clickRem">رد</a>
+                    <a href="accept/{{ req.id }}" class="clickEdit">تایید</a>
+                </td>
+              </tr>
+                {% ++ i %}
+            {% endfor %}
+                {% endwith %}
+                {% else %}
+                <tr>
+                    <td style="text-align: center; color: #ACACAC">هیچ موردی جهت نمایش وجود ندارد</td>
+                </tr>
+                {% endif %}
+            </table>
+
+                <br><p>پروژه های انتخاب نشده</p>
+            <br>
+            <table class="table table-striped" style="border: none">
+                {% if notRequested %}
+                {% for nreq in notRequested %}
+
+              <tr>
+                <td>{{ nreq.prj_title }}</td>
+
+                <td>
+                    <a href="remove/{{ nreq.id }}" class="clickRem">حذف</a>
+                    <a href="edit/{{ nreq.id }}" class="clickEdit">ویرایش</a>
+                </td>
+              </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td style="text-align: center; color: #ACACAC">هیچ موردی جهت نمایش وجود ندارد</td>
+                </tr>
+                {% endif %}
+            </table>
+
+
+                <br><p>پروژه های تایید شده</p>
+            <br>
+            <table class="table table-striped" style="border: none">
+                {% if accepted %}
+                {%  with j=0 %}
+              {% for acc in accepted %}
+                <tr>
+                <td>{{ acc.prj_title }}</td>
+                <td style="font-size: 14px; text-align: center;">{{ accstd|return_user_data:j }}</td>
+                    <td style="width: 155px">
+                    <a href="decline/{{ acc.id }}" class="clickRem">رد</a>
+                </td>
+              </tr>
+                {% ++ j %}
+            {% endfor %}
+                {% endwith %}
+                {% else %}
+                <tr>
+                    <td style="text-align: center; color: #ACACAC">هیچ موردی جهت نمایش وجود ندارد</td>
+                </tr>
+                {% endif %}
+            </table>
+
+            <br>
+            <br>
+            </center>
+        </div>
+    </div>
+
+
+
+<div class="push"><!--//--></div>
+{% endblock %}

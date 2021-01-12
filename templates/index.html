@@ -1,0 +1,317 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+
+{% block title %}گروه کامپیوتر دانشگاه تربت حیدریه{% endblock %}
+
+{% block content %}
+    <div id="features" class="row-fluid hero" role="complementary">
+	<a id="maincontent"></a>
+	<div class="lSSlideOuter " dir="rtl"><div class="lSSlideWrapper usingCss"><ul id="features_container" class="lightSlider lSFade" style="height: 0px; padding-bottom: 35.0184%;">
+		<li class="first lslide active">
+			<a href="#" class="herowrap">
+				<div class="background" style="background-image: url(//cdn.news.uchicago.edu/sites/default/files/styles/rss_slider/public/images/2019-02/shutterstock_1109342834.jpg?h=944f5cba&amp;itok=wAm-FPmL);"></div>
+				<div class="slidewrap">
+					<div class="headline">
+						<h2>دانشگاه عالی تربت حیدریه</h2>
+						<p class="blurb hidden-phone">این دانشگاه در 7 کیلومتری جاده مشهد واقع شده است . </p>
+					</div>
+					<img src="{% static 'statics/media/uni%20torbat.jpg' %}" alt=" ">
+				</div>
+			</a>
+		</li>
+
+        <li class="lslide">
+			<a href="#" class="herowrap">
+				<div class="background" style="background-image: url(&quot;//cdn.news.uchicago.edu/sites/default/files/styles/rss_slider/public/images/2019-01/IMG_1303.jpg?h=f13c1504&amp;itok=BvfBhtTX&quot;);" ></div>
+				<div class="slidewrap">
+					<div class="headline">
+						<h2>گروه مهندسی کامپیوتر</h2>
+						<p class="blurb hidden-phone">از سال 1394 در رشته ی کارشناسی پیوسته نرم افزار ورود پیدا کرده است .</p>
+					</div>
+					<img src="{% static 'statics/media/uni%20torbat%202.jpg' %}"  alt=" " style="">
+				</div>
+			</a>
+		</li>
+
+        <li class="lslide">
+			<a href="#" class="herowrap">
+				<div class="background" style="background-image: url(&quot;//cdn.news.uchicago.edu/sites/default/files/styles/rss_slider/public/images/2019-01/UChicagoCornerviewrendering.jpg?h=843cc3fa&amp;itok=G1dJmb8R&quot;);" ></div>
+				<div class="slidewrap">
+					<div class="headline">
+						<h2> عنوان ساختگی </h2>
+						<p class="blurb hidden-phone">این عنوان کاملا ساختگی می باشد </p>
+					</div>
+					<img src="{% static 'statics/media/uni%20torbat%203.jpg' %}"  alt=" " style="">
+				</div>
+			</a>
+		</li>
+
+        <li class="lslide">
+			<a href="https://news.uchicago.edu/story/looking-back-2018" class="herowrap">
+				<div class="background" style="background-image: url(&quot;//cdn.news.uchicago.edu/sites/default/files/styles/rss_slider/public/images/2018-12/20141202_Twinklers_3192%5B1%5D.jpg?itok=rPfbt71M&quot;);" data-original="//cdn.news.uchicago.edu/sites/default/files/styles/rss_slider/public/images/2018-12/20141202_Twinklers_3192%5B1%5D.jpg?itok=rPfbt71M"></div>
+				<div class="slidewrap">
+					<div class="headline">
+						<h2>متن ساختگی بعدی</h2>
+						<p class="blurb hidden-phone">این متن دوباره کاملا ساختگی می باشد </p>
+					</div>
+					<img src="{% static 'statics/media/uni%20torbat%204.jpg' %}"  alt=" " style="">
+				</div>
+			</a>
+		</li>
+	</ul></div><ul class="lSPager lSpg" style="margin-top: 5px;"><li><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li></ul></div>
+</div>
+
+    <div id="maincontent_home" role="main" >
+
+        <div class="container-fluid page grey">
+				<div class="row module news">
+					<div class="col-sm-12">
+						<div class="row" dir="rtl">
+							<div class="col-sm-12">
+								<h2><a href="#">آخرین اخبار</a></h2>
+							</div>
+						</div>
+						<div class="row row-flex row-flex-wrap" dir="rtl">
+
+                            <div class="col-md-9 col-sm-12 flex-col main-stories" >
+                                    <div class="row row-flex row-flex-wrap">
+
+                                        <a href="{{ news.0.get_absolute_url }}" class="col-sm-4 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-xs-5 story">
+                                                        <span>
+                                                            <img src="{{ news.0.image.url }}" alt=" " class="lazy" style="display: inline; width: 300px; height: 170px; object-fit: cover;">
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-sm-12 col-xs-7">
+                                                        <h3>{{ news.0.title }}</h3>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        <a href="{{ news.1.get_absolute_url }}" class="col-sm-4 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-xs-5 story">
+                                                        <span>
+                                                            <img src="{{ news.1.image.url }}" alt=" " class="lazy" style="display: inline; width: 300px; height: 170px; object-fit: cover;">
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-sm-12 col-xs-7">
+                                                        <h3>{{ news.1.title }}</h3>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        <a href="{{ news.2.get_absolute_url }}" class="col-sm-4 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-xs-5 story">
+                                                        <span>
+                                                            <img src="{{ news.2.image.url }}" alt=" " class="lazy" style="display: inline; width: 300px; height: 170px; object-fit: cover;">
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-sm-12 col-xs-7">
+                                                        <h3>{{ news.2.title }}</h3>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        <a href="{{ news.3.get_absolute_url }}" class="col-sm-4 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-xs-5 story">
+                                                        <span>
+                                                            <img src="{{ news.3.image.url }}" alt=" " class="lazy" style="display: inline; width: 300px; height: 170px; object-fit: cover;">
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-sm-12 col-xs-7">
+                                                        <h3>{{ news.3.title }}</h3>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                    </div>
+                            </div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+        <div class="container-fluid page cta" >
+			<div class="row module video">
+				<div class="col-md-7 col-sm-6 col-lg-offset-1">
+
+					<div class="video_wrapper">
+						<iframe src="{% static 'statics/File-pic/computer%20logo.jpg' %}" allowfullscreen="" aria-label="Featured Video"></iframe>
+					</div>
+
+				</div>
+				<div class="col-lg-3 col-md-5 col-sm-6" dir="rtl">
+					<h2 style="text-align:right;">جستجو در دانشگاه تربت حیدریه</h2>
+					<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. </p>
+					<a href="#" class="more-link"><span><b></b>بازدید از دانشگاه </span></a>
+				</div>
+			</div>
+		</div>
+
+        <div class="container-fluid page grey spotlight-wrap">
+            <div class="row module spotlight tabs tabs-style-iconbox">
+                <nav>
+                    <ul id="spotlight-tabs">
+                        <li class="active"><a href="#" id="nav-spotlight"><span>رویدادها</span></a></li>
+                        <li><a  id="nav-impact"><span>اطلاعیه های گروه</span></a></li>
+                    </ul>
+                </nav>
+                <div id="spotlight-wrapper">
+                    <div class="lSSlideOuter ">
+                        <div class="lSSlideWrapper usingCss on">
+                            <ul id="spotlight-slider" class="lightSlider lSFade" style="height: 205.6px; padding-bottom: 17.1333%; display: block; transition-duration: 500ms; transition-timing-function: ease;">
+                                <li class="lslide active">
+                                    <section id="section-spotlight">
+                                        <h2 class="sr-only">رویدادها</h2>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ events.0.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ events.0.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ events.0.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ events.1.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ events.1.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ events.1.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ events.2.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ events.2.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ events.2.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ events.3.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ events.3.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ events.3.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ events.4.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ events.4.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ events.4.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ events.5.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ events.5.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ events.5.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+
+
+
+
+                                    </section>
+                                </li>
+                                <li class="lslide">
+                                    <section id="section-impact">
+                                        <h2 class="sr-only">اخبار</h2>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ notifications.0.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ notifications.0.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ notifications.0.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ notifications.1.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ notifications.1.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ notifications.1.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ notifications.2.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ notifications.2.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ notifications.2.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ notifications.3.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ notifications.3.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ notifications.3.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ notifications.4.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ notifications.4.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ notifications.4.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="{{ notifications.5.get_absolute_url }}" class="circle-photo">
+                                                <figure>
+                                                    <img src="{{ notifications.5.image.url }}" alt=" " style="display: inline; width: 165px; height: 165px; object-fit: cover;">
+
+                                                    <figcaption>{{ notifications.5.title }}</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+
+
+
+
+                                    </section>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://cdn.hypemarks.com/raw/popUpModalEndpoint -->
+<html><script async="" src="./keen-tracking-1.0.3.min.js.download"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link href="./css(1)" data-viewport-units-buggyfill="ignore" rel="stylesheet" type="text/css">
+
+    <script src="./jquery-1.10.2.min.js.download"></script>
+
+        <link rel="stylesheet" type="text/css" href="./popup-modal.min.0e9b7ef74aab843e.css" media="all">
+    <script src="./popup-modal.min.86237d0ecfaaecdc.js.download"></script>
+<script src="./emojione.min.js.download"></script>
+<link rel="stylesheet" href="./emojione.min.css">
+
+<script type="text/javascript" src="./filestack.min.js.download"></script>
+<script>
+HM.inkfilepickerKey = "APlRkFeSpQhGlhLqd8VZfz";
+</script>
+
+    <script type="text/template" id="popupModalTemplate">
+        <div id="popupModalStyleContainer"></div>
+<div class="popup-modal-bg"></div>
+<div style="width:0px; height: 0px; padding: 0; margin: 0; border: 0;" data-return=".post-share-open" class="screenreader-focus-guard" tabindex="0"></div>
+
+<div class="_71n7_modal">
+    <div aria-atomic="true" aria-live="polite" id="_71n7_description" style="width: 0; height: 0; padding: 0; margin: 0; overflow: hidden;"></div>
+    <div class="_71n7_modal_content">
+        {{^is_display_theme}}
+        {{^edit_mode}}
+            <div class="_71n7_modal_close"><a href="#" role="button" aria-label="{{accessibility.modal.close}}"><i class="far fa-angle-down"></i><br><i class="far fa-angle-up"></i></a></div>
+        {{/edit_mode}}
+        <div class="_71n7_modal_right"><a href="#" role="button" aria-label="{{accessibility.modal.next}}"><i class="far fa-angle-right"></i></a></div>
+        <div class="_71n7_modal_left"><a href="#" role="button" aria-label="{{accessibility.modal.previous}}"><i class="far fa-angle-left"></i></a></div>
+        {{/is_display_theme}}
+
+        {{#image}}
+        <div class="_71n7_image_holder" {{^embed}}{{#image}}style="background-image: url('{{image}}')"{{/image}}{{/embed}}>
+            {{^embed}}{{#image}}<img src="{{image}}" class="_71n7_image" alt="" style="visibility: hidden; width: 100%;"/>{{/image}}{{/embed}}
+            {{#cta.hotspot_x}}
+                <div class="hotspot" style="top: {{cta.hotspot_y}}%; left: {{cta.hotspot_x}}%">
+                    <div class="tooltiptext">
+
+                                   <span class="cta-text">
+                                    {{cta.cta_text}}
+                                    </span>
+
+                                    {{#cta.cta_url}}
+                                    </br>
+                                    <span>
+                                        <a class="cta-url" href="{{cta.cta_url}}">Shop Now</a>
+                                    </span>
+                                    {{/cta.cta_url}}
+
+                                    </div>
+                </div>
+
+            {{/cta.hotspot_x}}
+        </div>
+        {{/image}}
+
+
+        <div class="_71n7_content_holder {{#has_cta}}_71n7_cta_exists{{/has_cta}}  {{^image}}_71n7_content_holder_text_only{{/image}}">
+        {{#has_cta}}
+            <div class="_71n7_cta portrait {{^cta.cta_thumbnail}}no-img{{/cta.cta_thumbnail}}">
+                {{#cta.cta_thumbnail}}
+                    <img src="{{cta.cta_thumbnail}}" alt="{{cta.cta_text}}">
+                {{/cta.cta_thumbnail}}
+                <button class="_71n7_cta_button {{^cta.cta_thumbnail}}no-img{{/cta.cta_thumbnail}}">
+                    <span data-url="{{cta.cta_url}}">{{cta.cta_text}}</span>
+                    {{^cta.cta_thumbnail}}
+                        <i class="fas fa-chevron-right"/></i>
+                    {{/cta.cta_thumbnail}}
+
+                </button>
+            </div>
+        {{/has_cta}}
+            {{#show_author}}
+            {{#acct_image}}
+                <a {{#acct_url}} href="{{acct_url}}" {{/acct_url}} target="_blank" tabindex="0" aria-label="{{acct_name_full}} profile image" class="_71n7_author_image_holder">
+                    <img src="{{acct_image}}" class="_71n7_author_image" />
+                </a>
+            {{/acct_image}}
+
+            {{#acct_name_full}}
+        	    <div class="_71n7_author">
+                <div class="_71n7_author_name">
+                    <a class="author_name {{^acct_username}}author_no_username{{/acct_username}}" {{#acct_url}} href="{{acct_url}}" {{/acct_url}} target="_blank" aria-label="{{accessibility.post.name_label}}">{{acct_name_full}}</a>
+                    <a class="author_username" {{#acct_url}} href="{{acct_url}}" {{/acct_url}} target="_blank" aria-label="{{accessibility.post.username_label}}">{{acct_username_full}}</a>
+                    {{^is_custom}}
+                    <a class="_71n7_social_icon {{#has_cta}}image-cta{{/has_cta}}" {{#is_twitter}}href="https://twitter.com" target="_blank"{{/is_twitter}} data-network="{{source_network}}" tabindex="-1">
+                        {{#is_twitter}}
+                        <i class="fab fa-twitter "></i>
+                        {{/is_twitter}}
+
+                        {{#is_instagram}}
+                        <i class="fab fa-instagram"></i>
+                        {{/is_instagram}}
+
+                        {{#is_rss}}
+                        <i class="fas fa-rss"></i>
+                        {{/is_rss}}
+
+                        {{#is_facebook}}
+                        <i class="fab fa-facebook-f"></i>
+                        {{/is_facebook}}
+
+                        {{#is_youtube}}
+                        <i class="fab fa-youtube"></i>
+                        {{/is_youtube}}
+
+                        {{#is_pinterest}}
+                        <i class="fab fa-pinterest"></i>
+                        {{/is_pinterest}}
+
+                        {{#is_googleplus}}
+                        <i class="fab fa-google-plus-g"></i>
+                        {{/is_googleplus}}
+
+                        {{#is_linkedin}}
+                        <i class="fab fa-linkedin-in"></i>
+                        {{/is_linkedin}}
+
+                        {{#is_tumblr}}
+                        <i class="fab fa-tumblr"></i>
+                        {{/is_tumblr}}
+
+                        {{#is_vine}}
+                        <i class="fab fa-vine"></i>
+                        {{/is_vine}}
+
+                        {{#is_flickr}}
+                        <i class="fab fa-flickr"></i>
+                        {{/is_flickr}}
+
+                        <!-- don't show an icon for public post network -->
+                    </a>
+                    {{/is_custom}}
+                </div>
+            </div>
+            {{/acct_name_full}}
+            {{/show_author}}
+            <div class="_71n7_title {{#rtl}}_71n7_rtl{{/rtl}} {{^acct_image}}_71n7_no_author{{/acct_image}} {{#modified_url}}has-url{{/modified_url}}" aria-label="{{accessibility.post.post_title}}" tabindex="0">
+                <span>{{{modified_title}}}</span>
+            </div>
+            {{#has_cta}}
+            <div class="_71n7_cta landscape {{^cta.cta_thumbnail}}no-img{{/cta.cta_thumbnail}}">
+                {{#cta.cta_thumbnail}}
+                    <img src="{{cta.cta_thumbnail}}" alt="{{cta.cta_text}}">
+                {{/cta.cta_thumbnail}}
+                <button class="_71n7_cta_button {{^cta.cta_thumbnail}}no-img{{/cta.cta_thumbnail}}">
+                    <span data-url="{{cta.cta_url}}">{{cta.cta_text}}</span>
+                    {{^cta.cta_thumbnail}}
+                    <i class="fas fa-chevron-right"/></i>
+                    {{/cta.cta_thumbnail}}
+
+                </button>
+            </div>
+            {{/has_cta}}
+            
+
+            <div class="time-and-share">
+                <div class="_71n7_author_timeago {{#powered_by_tint}}powered-by-tint{{/powered_by_tint}}">
+                    <a {{#modified_url}}href="{{modified_url}}"{{/modified_url}} target="_blank" aria-label="{{accessibility.post.timeago}}">
+                    {{timeago}}
+                    </a>
+                </div>
+
+                {{#powered_by_tint}}
+                  <div class="powered-by-tint-logo">
+                    <a href="//www.tintup.com">
+                        powered by TINT
+                        <img  src="//cdn.hypemarks.com/assets/logos/tintlogosmall.png">
+                    </a>
+                  </div>
+                {{/powered_by_tint}}
+
+                {{^is_display_theme}}
+                <div class="_71n7_modal_share {{#powered_by_tint}}powered-by-tint{{/powered_by_tint}}">
+                    {{#is_twitter}}
+                        <a href="https://twitter.com/intent/tweet?in_reply_to={{tweet_post_id}}" aria-label="{{accessibility.post.twitter.reply}}" class="accentColor" onclick="return !window.open(this.href, 'Twitter', 'width=500,height=300')" target="blank"><i class="fas fa-reply"></i></a>
+                        <a href="https://twitter.com/intent/retweet?tweet_id={{tweet_post_id}}"  aria-label="{accessibility.post.twitter.retweet}}" class="accentColor" onclicaria-label="" k="return !window.open(this.href, 'Twitter', 'width=500,height=300')" target="blank"><i class="fas fa-retweet-alt"></i></a>
+                        <a href="https://twitter.com/intent/favorite?tweet_id={{tweet_post_id}}" aria-label="{accessibility.post.twitter.like}}" class="accentColor" onclick="return !window.open(this.href, 'Twitter', 'width=500,height=300')" target="blank"><i class="fas fa-heart"></i></a>
+                    {{/is_twitter}}
+                    {{{shareTooltip}}}
+                </div>
+                {{/is_display_theme}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="width:0px; height: 0px; padding: 0; margin: 0; border: 0;" data-return="._71n7_modal_close a" class="screenreader-focus-guard" tabindex="0"></div>
+    </script>
+    <script type="text/template" id="shareTooltipTemplate">
+        <span class="share-options-menu" style="display: none;">
+    <ul class="share-options-menu-list">
+        {{#shareOptions}}
+            <li>
+                <a class="post-share-{{code}}-a" href="{{ url }}" onclick="_gaq.push(['_trackEvent', 'Engagement', '{{name}} Share Clicked']);hmAnalytics.track('Engagement: Share Clicked', {'type': '{{code}}', 'tint_id': {{tintId}}, 'post_id': '{{postId}}'});return !window.open(this.href, '{{name}}', 'width=665,height=300')" aria-label="Share on {{name}}. Opens in new window." target="_blank">
+                    <i class="{{icon}}"></i>
+                    <span class="network-name">{{name}}</span>
+                </a>
+            </li>
+        {{/shareOptions}}
+        <li style="width:0px; height: 0px; padding: 0; margin: 0;" class="share-menu-focus-guard" tabindex="0"></li>
+    </ul>
+</span>
+
+<a class="post-share-open accent-color-hover" tabindex="0" aria-label="Share this post">
+    <i class="icon-hm-small fas fa-share-alt"></i>
+</a>
+    </script>
+
+    
+        <script>
+    if(typeof Wix === 'undefined'){
+
+      var analytics = {
+        keen_pending: [],
+        track:function(name, params){
+          if (this.keen_client) {
+            this.keen_track(name, params);
+          } else {
+            this.keen_pending.push(arguments);
+          }
+        },
+        keen_track: function (name, params) {
+          var keen_params = params;
+          this.keen_client.addEvent(name, keen_params);
+        },
+        keen_ready: function () {
+          while (this.keen_pending.length) {
+            var args = this.keen_pending.pop();
+            this.keen_track.apply(this, args);
+          }
+        },
+        identify:function(){},
+        group: function(){}
+      };
+
+      !function(name,path,ctx){
+        var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+      }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.0.3.min.js',this);
+
+      KeenAsync.ready(function(){
+        analytics.keen_client = new KeenAsync({
+          projectId: '53d0291505cd667674000007',
+          writeKey: '2dbed072d2796069be2142d5a42788f12fc10b221393d5e1b6e4b3f716a18706ebcbdbaf43a63b42d61dacd5ef719a897f9dad00e9bc2afbc06382aa76eabd801084d25228653c0765831663697301dadb4e5f72f4ea71d3c87c025b176edf5c355856295dfd69baf7b761e5ea93d5d7'
+        });
+        analytics.keen_ready();
+      });
+    }
+    </script>
+    </head>
+<body class="pop-up-modal-body" role="dialog" aria-label="Post" style="">
+
+
+<div></div></body></html>

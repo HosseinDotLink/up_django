@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ data.title }}{% endblock %}
+
+{% block content %}
+
+
+    <div class="container page" role="main" dir="rtl">
+
+        <div class="row">
+            <center>
+            <a id="maincontent"></a>
+            <h1>{{ data.title }}</h1>
+
+            <div class="col9">
+                <div class="row">
+                    <img src="{{ data.image.url }}" style="display: block; height: 300px; width: auto; margin-left: auto; margin-right: auto; margin-bottom: 20px">
+                    <div class="col10 maincontent justifyy"  >
+
+                            <p>{{ data.body }}</p>
+                        </div>
+                </div>
+            </div>
+
+        </center>
+        </div>
+    </div>
+    <div class="push"><!--//--></div>
+</div>
+
+
+{% endblock %}

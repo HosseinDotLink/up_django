@@ -1,0 +1,67 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+    <div class="container page" role="main" >
+
+        <!--لیست اعضا-->
+        <div class="col-md-12 news-uni component" >
+
+            <div class="row component-row" >
+
+
+                <div class="item-page" dir="rtl">
+
+                    <div class="row">&nbsp;</div>
+                    <div class="row">
+                        {% for master in masterList %}
+                        <table class="table table-striped"  >
+                            <thead>
+                            <tr>
+                                <td rowspan="2" style=" width: 100px; height: 150px; object-fit: cover;"><img src="{{ master.master_picture.url }}"  ></td>
+                                <td style="width: 75%">{{ master.master_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ master.master_level }}</td>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>آخرین مدرک تحصیلی :</td>
+                                <td>{{ master.master_degree }} ، {{ master.master_degree_uni }} ، {{ master.master_degree_year }}</td>
+                            </tr>
+                            {% if master.master_phone %}
+                            <tr>
+                                <td>شماره تماس :</td>
+                                <td>{{ master.master_phone }}</td>
+
+                            </tr>
+                            {% endif %}
+                            {% if master.master_website %}
+                            <tr>
+                                <td>وبسایت :</td>
+                                <td><a href="{{ master.master_website }}">{{ master.master_website }}</a></td>
+
+                            </tr>
+                            {% endif %}
+                            <tr>
+                                <td>ایمیل : </td>
+                                <td>{{ master.master_email }}</td>
+                            </tr>
+                        </table>
+                        {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="push"><!--//--></div>
+</div>
+
+{% endblock %}

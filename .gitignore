@@ -1,0 +1,4 @@
+venv
+*.zip
+*.sqlite3
+.idea

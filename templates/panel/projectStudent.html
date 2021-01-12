@@ -1,0 +1,132 @@
+{% extends "panel/master.html" %}
+{% load staticfiles %}
+{% load plusplustag %}
+{% load return_item %}
+
+{% block title %}پنل کاربری - گروه کامپیوتر دانشگاه تربت حیدریه{% endblock %}
+
+{% block style %}
+
+.clickEdit {
+  width: 70px;
+  background-color: #fff;
+  border: solid;
+  border-color: #ce31e0;
+  color: #ce31e0;
+  padding: 2px;
+  text-decoration: none;
+  float:left;
+  font-size: 14px;
+  text-align: center;
+  margin-left : 5px;
+
+}
+.clickEdit:hover {
+  background-color: #ce31e0;
+  text-decoration: none;
+  color: white;
+}
+
+.clickRem {
+  width: 60px;
+  background-color: #fff;
+  border: solid;
+  border-color: #f7941d;
+  color: #f7941d;
+  padding: 2px;
+
+  text-decoration: none;
+  float:left;
+  font-size: 14px;
+  text-align: center;
+
+}
+.clickRem:hover {
+  background-color: #f7941d;
+  text-decoration: none;
+  color: white;
+}
+
+
+.clickadd {
+  width: 100px;
+  background-color: #fff;
+  border: solid;
+  border-color: #f7941d;
+  color: #f7941d;
+  padding: 2px;
+  text-decoration: none;
+  float:left;
+  font-size: 16px;
+  text-align: center;
+
+}
+.clickadd:hover {
+  background-color: #f7941d;
+  text-decoration: none;
+  color: white;
+}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container page" role="main" dir="rtl">
+
+        <div class="row">
+            <center>
+            <a id="maincontent"></a>
+
+            <br>
+
+
+                <br><p>پروژه های انتخاب شده توسط دانشجویان</p>
+            <br>
+            <table class="table table-striped" style="border: none">
+                {% if have_accepted_project %}
+                <tr>
+                    <td style="text-align: center; color: #000000">پروژه انتخابی شما توسط استاد {{ master }} تایید شده است. برای اطلاعات بیشتر به ایشان مراجعه فرمایید.</td>
+                </tr>
+                {% else %}
+                {% if have_project %}
+
+                <tr>
+                    <td style="text-align: center; color: #ACACAC">شما یک پروژه را انتخاب کرده اید. لطفا منتظر پاسخ استاد مربوطه باشید!</td>
+                </tr>
+
+                {% else %}
+                {% if projects %}
+                {%  with i=0 %}
+              {% for project in projects %}
+                <tr>
+                <td>{{ project.prj_title }}</td>
+                <td style="font-size: 14px; text-align: center;">{{ master|return_user_data_no_username:i }}</td>
+
+                <td style="width: 155px">
+                    <a href="select/{{ project.id }}" class="clickEdit">انتخاب</a>
+                </td>
+              </tr>
+                {% ++ i %}
+            {% endfor %}
+                {% endwith %}
+                {% else %}
+                <tr>
+                    <td style="text-align: center; color: #ACACAC">هیچ موردی جهت نمایش وجود ندارد</td>
+                </tr>
+                {% endif %}
+                {% endif %}
+                {% endif %}
+            </table>
+
+
+
+            <br>
+            <br>
+            </center>
+        </div>
+    </div>
+
+
+
+<div class="push"><!--//--></div>
+{% endblock %}

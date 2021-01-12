@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+{% load jformat %}
+
+{% block title %}لیست اخبار - گروه کامپیوتر دانشگاه تربت حیدریه{% endblock %}
+
+{% block content %}
+
+    <div class="container page" role="main" >
+
+        <!--لیست اخبار-->
+        <div class="col-md-12 news-uni component" >
+
+            <center>
+                <h1> لیست {{ title }} دانشگاه تربت حیدریه</h1>
+                <br>
+            <table class="table table-striped"  dir="rtl">
+                {%for dt in data %}
+                <tr>
+                    <td><a href="{{ dt.slug }}">{{ dt.title }}</a> </td>
+                    <td style="text-align: left">{{ dt.publish|jformat:"%Y/%m/%d" }}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+            </center>
+        </div>
+
+
+    </div>
+</div>
+<div class="row">&nbsp;</div>
+
+{% endblock %}

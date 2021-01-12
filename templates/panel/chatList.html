@@ -1,0 +1,59 @@
+{% extends "panel/master.html" %}
+{% load staticfiles %}
+{% load plusplustag %}
+{% load return_item %}
+
+{% block title %}گفت و گو - گروه کامپیوتر دانشگاه تربت حیدریه{% endblock %}
+
+{% block style %}
+
+.click {
+  background-color: #fff;
+  border: solid;
+  border-color: #ce31e0;
+  color: #ce31e0;
+  padding: 2px 16px;
+  text-decoration: none;
+  float:left;
+  font-size: 14px;
+}
+.click:hover {
+  background-color: #ce31e0;
+  text-decoration: none;
+  color: white;
+}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container page" role="main" dir="rtl">
+
+        <div class="row">
+            <center>
+            <a id="maincontent"></a>
+              <p style="margin-top: 25px; margin-bottom: 25px">برای شروع گفت و گو و یا مشاهده پیام های ارسالی بر روی دکمه مربوط کلیک کنید</p>
+
+            <table class="table table-striped" style="border: none">
+                {% with i=0 %}
+              {% for master in masters %}
+
+              <tr>
+                <td>{{ master.first_name }} {{ master.last_name }}</td>
+                  <td><p style="font-size: 12px">{{ cnt|return_item:i }}</p></td>
+                <td><a href="{{ master.username }}" class="click">شروع گفت و گو</a></td>
+              </tr>
+                {% ++ i %}
+              {% endfor %}
+                {% endwith %}
+            </table>
+
+
+
+        </center>
+        </div>
+    </div>
+    <div class="push"><!--//--></div>
+</div>
+
+{% endblock %}
